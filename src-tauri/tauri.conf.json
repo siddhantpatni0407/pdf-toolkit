@@ -47,17 +47,7 @@
       "open": true
     },
     "fs": {
-      "permissions": [
-        {
-          "identifier": "fs:scope",
-          "allow": [
-            { "path": "$APPDATA/**" },
-            { "path": "$DOCUMENT/**" },
-            { "path": "$DOWNLOAD/**" },
-            { "path": "$HOME/**" }
-          ]
-        }
-      ]
+      "requireLiteralLeadingDot": false
     }
   }
 }
