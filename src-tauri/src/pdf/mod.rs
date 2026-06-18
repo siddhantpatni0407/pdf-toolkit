@@ -18,5 +18,5 @@ pub use organize::{reorder_pages, remove_pages, extract_pages};
 pub use security::{protect_pdf, unlock_pdf, add_watermark, get_metadata, set_metadata,
                    PasswordOptions, WatermarkOptions, PdfMetadata};
 #[allow(unused_imports)]
-pub use convert::{convert_pdf_to, convert_to_pdf, ConvertOptions, ConvertFromFormat, ConvertToFormat};
+pub use convert::{convert_pdf_to, convert_to_pdf, ConvertOptions};
 pub use repair::repair_pdf;

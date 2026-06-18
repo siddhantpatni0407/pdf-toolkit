@@ -14,7 +14,7 @@ pub fn run_migrations(conn: &Connection) -> Result<(), AppError> {
 
     if version < 1 {
         migrate_v1(conn)?;
-        set_version(conn, 1)?;
+        set_version(conn, CURRENT_VERSION)?;
     }
 
     // Add future migrations: if version < 2 { migrate_v2(conn)?; set_version(conn, 2)?; }

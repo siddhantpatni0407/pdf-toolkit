@@ -46,10 +46,18 @@
     "shell": {
       "open": true
     },
-    "dialog": {},
     "fs": {
-      "all": true,
-      "scope": ["$APPDATA/**", "$DOCUMENT/**", "$DOWNLOAD/**", "$HOME/**"]
+      "permissions": [
+        {
+          "identifier": "fs:scope",
+          "allow": [
+            { "path": "$APPDATA/**" },
+            { "path": "$DOCUMENT/**" },
+            { "path": "$DOWNLOAD/**" },
+            { "path": "$HOME/**" }
+          ]
+        }
+      ]
     }
   }
 }

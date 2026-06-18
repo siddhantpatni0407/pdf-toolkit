@@ -2,7 +2,7 @@ use crate::error::AppError;
 use tauri::Manager;
 
 #[tauri::command]
-pub fn cmd_open_file(path: String, app: tauri::AppHandle) -> Result<(), AppError> {
+pub fn cmd_open_file(path: String, _app: tauri::AppHandle) -> Result<(), AppError> {
     // Basic path traversal check
     if path.contains("..") || path.contains('\0') {
         return Err(AppError::Validation("Invalid file path".into()));

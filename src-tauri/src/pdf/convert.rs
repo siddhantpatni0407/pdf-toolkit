@@ -13,9 +13,6 @@ pub struct ConvertOptions {
     pub image_resolution: Option<u32>,
 }
 
-pub type ConvertFromFormat = String;
-pub type ConvertToFormat = String;
-
 /// Converts a PDF to another format.
 /// Full conversion (Word, Excel, etc.) requires specialized libraries or external tools.
 /// Here we implement PDF → Images (PNG/JPG) directly, and stub the rest.
@@ -77,7 +74,7 @@ fn convert_pdf_to_text(input_path: &str, output_dir: &str) -> Result<Vec<String>
     let out_path = format!("{}/{}.txt", output_dir, stem);
 
     let mut text = String::new();
-    for (page_num, page_id) in doc.get_pages() {
+    for (page_num, _page_id) in doc.get_pages() {
         text.push_str(&format!("--- Page {} ---\n", page_num));
         if let Ok(content) = doc.extract_text(&[page_num]) {
             text.push_str(&content);
